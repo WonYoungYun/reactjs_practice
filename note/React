@@ -35,3 +35,20 @@ state
 map()은 파라미터로 전달 된 함수를 통하여  배열 내의 각 요소를 처리해서 그 결과로 새로운 배열을 생성합니다.
 
 var는 함수범위 let은 블록범위
+
+
+
+
+https://reactjs.org/blog/2016/07/22/create-apps-with-no-configuration.html
+
+
+
+
+
+snippet
+rcc
+
+
+create-react-app
+
+npm install redux, react-redux
