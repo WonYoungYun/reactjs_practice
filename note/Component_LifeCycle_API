@@ -1,0 +1,14 @@
+componentWillMount : 렌더링 되기전 실행
+componentDidMount : 렌더링 된 다음 실행
+componentWillReceiveProps : 새로운 props를 받았을떄
+shouldComponentUpdate : 컴포넌트가 업데이트를 해야할지 말아야할지 정하는 부분
+componentWillUpdate : 컴포넌트가 업데이트 되기전 실행
+componentDidUpdate : 컴포넌트가 update된 다음 실행
+componentWillUnmount : 컴포넌트가 제거된 다음 실행
+
+
+
+constructor componentWillMount render componentDidMount 순으로 실행
+
+unmount시 componentWillUnmount만 실행
+
