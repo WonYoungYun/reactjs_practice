@@ -17,11 +17,29 @@ state
 리액트 컴포넌트 안에 있는 오브젝트
 state를 바꾸면 render가 다시 발생한다, 새로운  state와 함께!
 state는 직접 변경하면 안된다. setState를 통해 변경
+모든 컴포넌트가 state있는것은 아니며 그것을 stateless component라고 한다.
+
+smart component와 dumb component
+dumb component는 porps만 있다 class를 사용하지않고 functional을 씀
+function render도 없고 라이프사이클도 없다
+
+
 
 map
 map을 통해 우리가 제공한 기능/명령의 결과값을 Array로 만든다
 새로운 array가 생기면서 다른 array의 엘리먼트의 값을 포함한다.
 
-
+라이프사이클
 // Render: componentWillMount() -> render() -> componentDidMount()
 // Update componentWillReceiveProps() -> shouldComponentUpdate() 업데이트를 해야하는지 말아야하는지 결정-> componentWillUpdate() -> render() -> componentDidUpdate()
+
+
+JSON 오브젝트를 자바스크립트로 작성하는 기법
+AJAX를 리액트에 적용하려면 Fetch를 사용
+Await, Async
+Async는 비동기를 지원
+Await는 뒤의 함수가 끝나기를 기다리고 성공여부 관련없이 그것의 값을 할당
+
+
+Promise는 비동기식을 위한 새로운 js컨셉이다.
+2가지 시나리오(잘되었을 때, 안되었을 때)가 있고 이것을 관리한다.
