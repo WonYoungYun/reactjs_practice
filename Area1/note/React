@@ -17,9 +17,9 @@ ES6에서는 Class를 지원
 생성자 생성도 가능
 
 JSX
+react로 html을 쓰는것
 XML-like syntax를 native javascripot로 변경
 style설정은 key가 camelCase인 객체 사용
-주석처리는 {/* */}사용
 
 
 Props
