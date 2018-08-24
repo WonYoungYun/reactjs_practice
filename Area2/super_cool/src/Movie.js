@@ -12,9 +12,9 @@ function Movie({title, poster, genres, synopsis}){
             <div className="Movie__Column">
                 <h1>{title}</h1>
                 <div className="Movie__Genres">
-                    {genres.map((genre, index) => <MovieGenre genre={genre} key={index}/>)}
+                    {genres.map((genre, index) => <MovieGenre genre={genre} key={index} />)}
                 </div>
-                <p className="Movie__Synopsis">
+                <div className="Movie__Synopsis">
                     <LinesEllipsis
                         text={synopsis}
                         maxLine='3'
@@ -22,7 +22,7 @@ function Movie({title, poster, genres, synopsis}){
                         trimRight
                         basedOn='letters'
                         />   
-                </p>
+                </div>
             </div>
         </div>
     );
@@ -31,7 +31,7 @@ function Movie({title, poster, genres, synopsis}){
 
 function MoviePoster({alt, poster}){
     return (
-        <img alt={alt} src={poster} className="Movie__poster"/>
+        <img alt={alt} src={poster} title={alt} className="Movie__poster"/>
     );
 }
 function MovieGenre({genre}){
@@ -43,13 +43,14 @@ function MovieGenre({genre}){
 Movie.prototype ={
     title: PropTypes.string.isRequired,
     poster: PropTypes.string.isRequired,
-    genres: PropTypes.string.isRequired,
+    genres: PropTypes.array.isRequired,
     synopsis: PropTypes.string.isRequired
 }
 
 
 MoviePoster.prototype ={
-    poster: PropTypes.string.isRequired
+    poster: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired
 }
 
 MovieGenre.prototype = {

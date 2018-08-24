@@ -16,40 +16,41 @@ class App extends Component {
 
 
 state={
-}
+};
 
  componentDidMount(){
     this._getMovies();
  }
 _renderMovies = () =>{
-  const movies = this.state.movies.map(movie/*(movie, index)*/ => {
-    return <Movie
-    title={movie.title_english}
-    poster={/*movie.poster*/movie.medium_cover_image}
-    key={/*index*/movie.id}
-    genres = {movie.genres}
-    synopsis={movie.synopsis}
-    />
-  })
+  const movies = this.state.movies.map(movie => {
+    return (<Movie
+      title={movie.title_english}
+      poster={movie.medium_cover_image}
+      key={movie.id}
+      genres = {movie.genres}
+      synopsis={movie.synopsis}
+      />
+    );
+  });
   return movies;
-}
+};
 
 _getMovies = async() => {
   const movies = await this._callAPI();
   //callAPI 가 끝나기 전까지 실행하지 않는다.
   this.setState({
     movies
-  })
-}
+  });
+};
 
 _callAPI  = () => {
-  return fetch('https://yts.am/api/v2/list_movies.json').then(response => response.json()).then(json => json.data.movies).catch(err => console.log(err));
+  return fetch('https://yts.am/api/v2/list_movies.json?sort_by=download_count').then(response => response.json()).then(json => json.data.movies).catch(err => console.log(err));
 }
 
   render() {
     const { movies } = this.state; 
     return (
-      <div className={movies ? "App": "App--loding"}>
+      <div className={movies ? "App" : "App--loading"}>
         {this.state.movies ? this._renderMovies() : "Loading"}
       </div>
     );
